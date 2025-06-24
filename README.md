@@ -3,7 +3,9 @@
 # 📅 Modern React Calendar Application
 
 A modern, animated, and fully responsive calendar application built with the latest React 19 features, styled using TailwindCSS, and enhanced with GSAP animations.
+## 🔗 Live Demo
 
+👉 [Try it Now](https://calendarmns.vercel.app/)
 ---
 
 ## ✨ Features
