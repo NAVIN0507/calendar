@@ -1,4 +1,5 @@
 import dayjs from 'dayjs'
+import { CornerDownRight } from 'lucide-react';
 import React, { useContext , useEffect, useState } from 'react'
 import GlobalContext from '../context/GlobalContext'
 const labelColors = {
@@ -30,12 +31,14 @@ const Day = ({day , rowIdx}) => {
      <div className='flex-1 cursor-pointer ml-1' onClick={()=>{
       setDaySelected(day)
       setShowEventModel(true)
+
      }}>
       {dayEvents.map((evt , idx)=>(
         <div key={idx}
         onClick={()=>setSelectedEvent(evt)}
-        className={`${labelColors[evt.label]} p-1 mr-3 text-gray-600 text-sm rounded mb-1 truncate w-full`}>
+        className={`${labelColors[evt.label]} p-1 mr-3 text-gray-600 text-sm rounded mb-1 truncate w-11/12 h-14`}>
           {evt.title}
+        <span className='flex gap-2 ml-2'>  <CornerDownRight /> {evt.description} </span>
         </div>
       ))}
      </div>

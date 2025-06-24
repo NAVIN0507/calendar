@@ -1,4 +1,4 @@
-import { Bookmark, CalendarCheckIcon, Clock, Menu, X } from 'lucide-react'
+import { Bookmark, CalendarCheckIcon, Clock, Menu, Trash, X } from 'lucide-react'
 import React, { useContext, useState } from 'react'
 import GlobalContext from '../context/GlobalContext'
 import { AlignRight , Check } from 'lucide-react'
@@ -21,17 +21,22 @@ const EventModel = () => {
     const {setShowEventModel , daySelected , dispatchCalEvent , selectedEvent}  = useContext(GlobalContext);
     const [title, settitle] = useState(selectedEvent ? selectedEvent.title : '');
     const [description, setdescription] = useState(selectedEvent ? selectedEvent.description :'');
-    const [selectedLabel, setselectedLabel] = useState(labelsClasses[0])
+    const [selectedLabel, setselectedLabel] = useState(selectedEvent ? labelsClasses.find((lbl)=>lbl === selectedEvent.label) : labelsClasses[0])
     function handleSave(){
         const task = {
             title,
             description,
             label:selectedLabel,
             day:daySelected.valueOf(),
-            id:Date.now(),
+            id:selectedEvent ? selectedEvent.id :  Date.now(),
             time: new Date().getTime()
         }
+        if(selectedEvent){
+            dispatchCalEvent({type:'update' , payload:task}) 
+        }
+        else{
         dispatchCalEvent({type:'push' , payload:task})
+        }
         setShowEventModel(false)
     }
   return (
@@ -41,11 +46,14 @@ const EventModel = () => {
             <span className=''>
                 <Menu/>
             </span>
+            <div className='flex gap-1'>
+           
             <button onClick={()=>setShowEventModel(false)} className='cursor-pointer'>
                 <span>
                     <X/>
                 </span>
             </button>
+            </div>
         </header>
         <div className='p-7 -mt-4'>
             <div className='grid grid-cols-1/5 items-end gap-y-7'>
@@ -79,6 +87,9 @@ const EventModel = () => {
             </div>
         </div>
         <footer className='flex justify-end border-t border-gray-300 p-3 mt-5'>
+        {selectedEvent &&  <button onClick={()=>dispatchCalEvent({type:'delete' , payload:selectedEvent})} className='flex mr-4 gap-2 items-center justify-center border border-gray-500 cursor-pointer rounded-lg p-2'>
+                    Delete
+                </button>}
             <button type='submit' className='bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded text-white' onClick={handleSave}>Save  </button>
         </footer>
         </form>
