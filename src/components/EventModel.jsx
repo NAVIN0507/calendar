@@ -18,9 +18,9 @@ const labelColors = {
   };
   
 const EventModel = () => {
-    const {setShowEventModel , daySelected , dispatchCalEvent}  = useContext(GlobalContext);
-    const [title, settitle] = useState('');
-    const [description, setdescription] = useState("");
+    const {setShowEventModel , daySelected , dispatchCalEvent , selectedEvent}  = useContext(GlobalContext);
+    const [title, settitle] = useState(selectedEvent ? selectedEvent.title : '');
+    const [description, setdescription] = useState(selectedEvent ? selectedEvent.description :'');
     const [selectedLabel, setselectedLabel] = useState(labelsClasses[0])
     function handleSave(){
         const task = {

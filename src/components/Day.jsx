@@ -9,7 +9,7 @@ const labelColors = {
   purple: 'bg-purple-300',
 };
 const Day = ({day , rowIdx}) => {
-  const {setDaySelected , setShowEventModel , savedEvents}  = useContext(GlobalContext);
+  const {setDaySelected , setShowEventModel , savedEvents , setSelectedEvent}  = useContext(GlobalContext);
   const [dayEvents, setdayEvents] = useState([]);
   useEffect(()=>{
     const events  = savedEvents.filter((evt)=>dayjs(evt.day).format("DD-MM-YY")===day.format("DD-MM-YY"))
@@ -32,7 +32,9 @@ const Day = ({day , rowIdx}) => {
       setShowEventModel(true)
      }}>
       {dayEvents.map((evt , idx)=>(
-        <div key={idx} className={`${labelColors[evt.label]} p-1 mr-3 text-gray-600 text-sm rounded mb-1 truncate w-full`}>
+        <div key={idx}
+        onClick={()=>setSelectedEvent(evt)}
+        className={`${labelColors[evt.label]} p-1 mr-3 text-gray-600 text-sm rounded mb-1 truncate w-full`}>
           {evt.title}
         </div>
       ))}
