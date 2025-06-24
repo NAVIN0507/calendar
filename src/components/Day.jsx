@@ -10,12 +10,12 @@ const labelColors = {
   purple: 'bg-purple-300',
 };
 const Day = ({day , rowIdx}) => {
-  const {setDaySelected , setShowEventModel , savedEvents , setSelectedEvent}  = useContext(GlobalContext);
+  const {setDaySelected , setShowEventModel ,filteredEvents , setSelectedEvent}  = useContext(GlobalContext);
   const [dayEvents, setdayEvents] = useState([]);
   useEffect(()=>{
-    const events  = savedEvents.filter((evt)=>dayjs(evt.day).format("DD-MM-YY")===day.format("DD-MM-YY"))
+    const events  = filteredEvents.filter((evt)=>dayjs(evt.day).format("DD-MM-YY")===day.format("DD-MM-YY"))
     setdayEvents(events)
-  } , [savedEvents])
+  } , [filteredEvents])
     const getCurrentDateClass = ()=>{
         return day.format("DD-MM-YY") === dayjs().format("DD-MM-YY") ?  'bg-blue-500 text-white rounded-full w-7' :''
     }
