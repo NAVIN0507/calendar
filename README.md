@@ -1,12 +1,61 @@
-# React + Vite
+![Calendar App Banner](./image.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 📅 Modern React Calendar Application
 
-Currently, two official plugins are available:
+A modern, animated, and fully responsive calendar application built with the latest React 19 features, styled using TailwindCSS, and enhanced with GSAP animations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🎨 Beautiful UI with **TailwindCSS**
+- 📆 Powerful date handling using **dayjs** and **date-fns**
+- 🌀 Smooth animations using **GSAP**
+- ⚛️ Component-based structure
+- 🌐 Context API for global state management
+- ⚡ Lightning-fast development with **Vite**
+- ✅ ESLint configured for consistent code
+- 💡 TypeScript-friendly (via `@types` support)
+
+---
+
+## 🧩 Tech Stack
+
+| Feature             | Technology                          |
+|---------------------|--------------------------------------|
+| Frontend Framework  | React 19.1.0                         |
+| Build Tool          | Vite                                 |
+| Styling             | TailwindCSS, Lucide React (icons)   |
+| Animation           | GSAP (GreenSock)                    |
+| Date Handling       | dayjs, date-fns                      |
+| State Management    | React Context API                    |
+                                      
+
+
+
+
+## 🚀 Getting Started
+
+Follow these steps to run the app locally:
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/NAVIN0507/calendar.git
+cd calendar
+npm install
+npm run dev
+```
+
+🔧 Configuration
+Make sure the following files exist and are correctly configured:
+
+vite.config.js – for Vite bundler setup
+
+eslint.config.js – for code linting rules
+
+tailwind.config.js – for utility-first styling customization
+
+🙌 Author
+Created by Your Navin — contributions welcome!
+
