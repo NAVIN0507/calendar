@@ -36,7 +36,7 @@ const Tasks = () => {
         return (
           <div
             key={`${label}-${idx}`}
-            className={`flex items-center justify-between p-3 rounded-full border-2 transition-all
+            className={`flex items-center justify-between p-2  rounded-full border-2 transition-all
               bg-${color}-50 cursor-pointer border-${color}-200 hover:bg-${color}-200 hover:border-${color}-300
               ${checked ? 'opacity-70' : ''}
             `}
@@ -46,7 +46,7 @@ const Tasks = () => {
                 type="checkbox"
                 checked={checked}
                 onChange={() => toggleTask(label, checked)}
-                className={`h-5 w-5 text-${color}-500 rounded border-${color}-300 focus:ring-${color}-300`}
+                className={`h-5 w-5 text-${color}-500 rounded ml-2 border-${color}-300 focus:ring-${color}-300`}
               />
               <span className={`capitalize font-medium transition-all ${checked ? 'text-gray-400 ' : 'text-gray-800'}`}>
                 {label}

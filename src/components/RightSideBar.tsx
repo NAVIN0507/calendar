@@ -2,7 +2,9 @@ import React from 'react'
 
 const RightSideBar = () => {
   return (
-    <div>RightSideBar</div>
+  <section className='w-74 border border-gray-300'>
+    
+  </section>
   )
 }
 

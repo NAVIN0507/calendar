@@ -2,6 +2,8 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import React, { useContext } from 'react'
 import GlobalContext from '../context/GlobalContext'
 import dayjs from 'dayjs';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 const CalendarHeader = () => {
   const {monthIndex , setMonthIndex} = useContext(GlobalContext);
@@ -14,8 +16,24 @@ const CalendarHeader = () => {
   function handleReset(){
     setMonthIndex(monthIndex ===  dayjs().month() ?  monthIndex + Math.random() : dayjs().month())
   }
+  useGSAP(() => {
+    gsap.fromTo(
+      '.header-d',
+      {
+        x: 1000,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        stagger: 0.05, // you can tweak this value
+        duration: 2,
+        ease: 'power2.out',
+      }
+    )
+  }, [])
   return (
-    <header className='px-4 py-2 flex items-center'>
+    <header className='px-4 py-2 flex items-center header-d'>
         <img src="/calendar.jpg" alt="logo" className='mr-2 w-12 h-12'/>
         <h1 className='mr-10  text-2xl text-gray-400 font-normal ml-2'>Calendar</h1>
         <button className='border rounded py-2 px-4 mr-5 border-gray-400 cursor-pointer' onClick={handleReset}>

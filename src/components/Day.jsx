@@ -1,7 +1,10 @@
 import dayjs from 'dayjs'
+
 import { CornerDownRight } from 'lucide-react';
 import React, { useContext , useEffect, useState } from 'react'
 import GlobalContext from '../context/GlobalContext'
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 const labelColors = {
   red: 'bg-red-300',
   gray: 'bg-gray-300',
@@ -10,6 +13,7 @@ const labelColors = {
   purple: 'bg-purple-300',
 };
 const Day = ({day , rowIdx}) => {
+
   const {setDaySelected , setShowEventModel ,filteredEvents , setSelectedEvent}  = useContext(GlobalContext);
   const [dayEvents, setdayEvents] = useState([]);
   useEffect(()=>{
@@ -19,6 +23,7 @@ const Day = ({day , rowIdx}) => {
     const getCurrentDateClass = ()=>{
         return day.format("DD-MM-YY") === dayjs().format("DD-MM-YY") ?  'bg-blue-500 text-white rounded-full w-7' :''
     }
+  
   return (
     <div className='border border-gray-200 flex flex-col'>
         <header className='flex flex-col items-center'>
@@ -36,7 +41,7 @@ const Day = ({day , rowIdx}) => {
       {dayEvents.map((evt , idx)=>(
         <div key={idx}
         onClick={()=>setSelectedEvent(evt)}
-        className={`${labelColors[evt.label]} p-1 mr-3 text-gray-600 text-sm rounded mb-1 truncate w-11/12 h-14`}>
+        className={`${labelColors[evt.label]} p-1 mr-3 text-gray-600 text-sm rounded mb-1 truncate w-11/12 h-14 day-event`} id='days'>
           {evt.title}
         <span className='flex gap-2 ml-2'>  <CornerDownRight /> {evt.description} </span>
         </div>

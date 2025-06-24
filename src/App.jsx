@@ -6,7 +6,10 @@ import Month from './components/Month'
 import GlobalContext from './context/GlobalContext'
 import EventModel from './components/EventModel'
 import RightSideBar from './components/RightSideBar'
+import gsap from 'gsap'
+import { ScrollTrigger , SplitText } from 'gsap/all'
 
+gsap.registerPlugin(ScrollTrigger , SplitText)
 const App = () => {
   
   const [currentMonth, setcurrentMonth] = useState(getMonth())
