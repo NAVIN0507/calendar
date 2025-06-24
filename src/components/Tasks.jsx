@@ -56,7 +56,7 @@ const Tasks = () => {
           </div>
         )
       })}
-    </div>
+</div>
   )
 }
 

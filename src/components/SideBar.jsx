@@ -48,9 +48,6 @@ const SideBar = () => {
 
       <hr className="border-gray-200" />
 
-      <div className="text-xs text-center text-gray-500 italic">
-        “Plan your day. Own your future.” ✨
-      </div>
     </aside>
   )
 }
