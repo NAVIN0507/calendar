@@ -60,7 +60,7 @@ const Day = ({ day, rowIdx }) => {
             key={idx}
             onClick={() => setSelectedEvent(evt)}
             title={evt.description}
-            className={`${labelColors[evt.label]} p-2 mr-2 text-gray-700 text-sm rounded-md mb-1 w-full h-auto shadow-sm hover:shadow-md transition-all duration-200 truncate`}
+            className={`${labelColors[evt.label]} p-2 mr-2 text-gray-700    text-sm rounded-md mb-1 w-full h-auto shadow-sm hover:shadow-md transition-all duration-200 truncate`}
           >
             <div className="flex items-center gap-2">
               <CalendarCheck2 size={16} />
