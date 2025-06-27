@@ -9,5 +9,6 @@ createRoot(document.getElementById('root')).render(
     <ContextWrapper>
     <App />
     </ContextWrapper>
-  </StrictMode>,
+    
+  </StrictMode>
 )
