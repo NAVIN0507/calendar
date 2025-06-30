@@ -35,19 +35,19 @@ const App = () => {
         <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
           {/* Sidebar on medium screens and above */}
           {width >= 768 && (
-            <div className="md:w-[250px] overflow-y-auto bg-gray-100">
+            <div className="md:w-[250px]  bg-gray-100">
               <SideBar />
             </div>
           )}
 
           {/* Main calendar content */}
-          <div className="flex-1 overflow-y-auto">
+         
             <Month month={currentMonth} />
-          </div>
+          
 
           {/* Right sidebar on medium screens and above */}
           {width >= 768 && (
-            <div className="md:w-[250px] overflow-y-auto bg-gray-100">
+            <div className="md:w-[250px]  bg-gray-100">
               <RightSideBar />
             </div>
           )}
