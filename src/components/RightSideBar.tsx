@@ -3,7 +3,8 @@ import GlobalContext from '../context/GlobalContext'
 import { CornerDownRight, CalendarClock } from 'lucide-react'
 import dayjs from 'dayjs'
 import SmallCalendar from './SmallCalendar'
-
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 const labelColors = {
   red: 'bg-red-100 text-red-800',
   gray: 'bg-gray-100 text-gray-800',
@@ -19,9 +20,21 @@ const RightSideBar = () => {
   useEffect(() => {
     setDayEvents(savedEvents)
   }, [savedEvents])
-
+useGSAP(() => {
+    gsap.fromTo(
+      '.sidbar',
+      { y: 1000, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 1,
+        duration: 1,
+        ease: 'power2.out',
+      }
+    )
+  }, [])
   return (
-    <section className="w-74 bg-white border border-gray-200 p-6 rounded-xl shadow-md flex flex-col h-full">
+    <section className="w-74 bg-white border border-gray-200 p-6 rounded-xl shadow-md flex flex-col h-full sidbar">
       {/* Fixed Header */}
       <div className="flex items-center gap-2 mb-2">
         <CalendarClock className="text-gray-500" size={22} />
