@@ -24,6 +24,13 @@ import {
     blue: 'bg-blue-500',
     purple: 'bg-purple-500',
   }
+    const labelColors2 = {
+    red: 'bg-red-200',
+    gray: 'bg-gray-200',
+    green: 'bg-green-200',
+    blue: 'bg-blue-200',
+    purple: 'bg-purple-200',
+  }
   
   const priorities = {
     Low: 'text-green-600 border-green-300',
@@ -122,7 +129,7 @@ import {
           
   
             {/* Preview */}
-            <div className="bg-gray-50 p-3 rounded border border-gray-200">
+            <div className={`${labelColors2[selectedLabel]} p-3 rounded border border-gray-200`}>
               <h3 className="text-sm font-medium text-gray-500 mb-1">Task Summary</h3>
               <p className="text-gray-800 font-semibold">{title || 'Untitled Task'}</p>
               <p className="text-sm text-gray-600">{daySelected.format('ddd, MMM D')} at {time}</p>
