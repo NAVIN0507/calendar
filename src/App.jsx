@@ -41,25 +41,19 @@ const App = () => {
 
           {/* Sidebar for mobile toggle */}
           {width < 768 && showSidebar && (
-            <div className="absolute z-30 bg-white shadow-md h-full w-64 p-4">
-              <button
-                className="absolute top-2 right-2"
-                onClick={() => setShowSidebar(false)}
-              >
-                <X size={24} />
-              </button>
+            <div className="absolute  bg-white shadow-md h-full w-64 p-4">
               <SideBar />
             </div>
           )}
 
           {/* Main calendar */}
-          <div className="flex-1 overflow-y-auto">
+     
             <Month month={currentMonth} />
-          </div>
+          
 
           {/* Right Sidebar */}
           {width >= 768 && (
-            <div className="md:w-[250px] bg-gray-100">
+            <div className=" bg-gray-100">
               <RightSideBar />
             </div>
           )}
@@ -68,10 +62,10 @@ const App = () => {
         {/* Floating toggle button on mobile */}
         {width < 768 && (
           <button
-            className="fixed bottom-4 right-4 z-40 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all"
+            className="fixed bottom-4 left-4 z-40 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all"
             onClick={() => setShowSidebar(prev => !prev)}
           >
-            <Menu size={24} />
+          {showSidebar ?  <X size={24}/> :   <Menu size={24} />}
           </button>
         )}
       </div>
