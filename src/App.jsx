@@ -35,7 +35,8 @@ const App = () => {
     <div className='flex flex-1'>
       {width > 767 && <SideBar/>}
       <Month month={currentMonth}/>
-      <RightSideBar/>
+      
+      {width && <RightSideBar/>}
     </div>
  
   </div>
