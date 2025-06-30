@@ -25,7 +25,7 @@ const SideBar = () => {
   const today = dayjs().format('dddd, MMMM D')
 
   return (
-    <aside className="border p-5 w-74 border-gray-300 sidbar bg-white rounded-xl shadow-sm space-y-6">
+    <aside className="border p-5 w-74 border-gray-300 sidbar bg-white  shadow-sm space-y-6">
       <div className="flex items-center gap-2 text-gray-700">
         <CalendarDays />
         <div>
