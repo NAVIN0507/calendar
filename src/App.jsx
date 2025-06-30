@@ -36,7 +36,7 @@ const App = () => {
       {width > 767 && <SideBar/>}
       <Month month={currentMonth}/>
       
-      {width && <RightSideBar/>}
+      {width > 767 && <RightSideBar/>}
     </div>
  
   </div>
