@@ -20,19 +20,7 @@ const RightSideBar = () => {
   useEffect(() => {
     setDayEvents(savedEvents)
   }, [savedEvents])
-useGSAP(() => {
-    gsap.fromTo(
-      '.sidbar',
-      { y: 1000, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 1,
-        duration: 1,
-        ease: 'power2.out',
-      }
-    )
-  }, [])
+
   return (
     <section className="w-74 bg-white border border-gray-200 p-6 rounded-xl shadow-md flex flex-col h-full sidbar">
       {/* Fixed Header */}
